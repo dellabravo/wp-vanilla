@@ -1,0 +1,269 @@
+/*
+	# Global Base Styles #
+*/
+html,body {
+  margin: 0;
+  font-size: 16px;
+  @include set-rem(line-height, $fs-1);
+  @include proxima-nova();
+  color: $fd-dark-gray;
+  // letter-spacing: -0.4px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@include sm-down{
+  body{
+    left: 0;
+    position: absolute;
+    width: 100%;
+    @include transition(all 0.5s ease-in-out);
+    &.slide-left{
+        left: -800px;
+        @include transition(all 1s 0.5s ease-in-out);
+        @include md-down{
+          @include transition(all 0.5s 0.3s ease-in-out);
+        }
+    }
+  }
+}
+
+
+/*
+	## Typography ##
+*/
+
+$breakpoints:(
+  small: 320px,
+  medium: 770px,
+  large: 1030px,
+  xlarge: 1280px,
+  xxlarge: 1440px,
+);
+
+$p-font-sizes: (
+  null: 16px,
+  small: 15px,
+  medium: 16px,
+  large: 16px,
+  xlarge: 16px,
+);
+
+$cat-font-sizes: (
+  null: 12px,
+  small: 12px,
+  medium: 12px,
+  large: 12px,
+  xlarge: 12px,
+);
+
+
+$article-p-font:(
+  null: 16px,
+  small: 17px,
+  medium: 17px,
+  large: 18px,
+  xlarge: 18px,
+);
+
+$nav-font-sizes:(
+  null: 15px,
+  small: 18px,
+  medium: 15px,
+  large: 15px,
+  xlarge: 15px,
+);
+
+$h1-font-sizes:(
+  null: 16px,
+  small: 30px,
+  medium: 30px,
+  large: 40px,
+  xlarge: 40px,
+);
+
+$section-headline-sizes:(
+  null: 20px,
+  small: 20px,
+  medium: 20px,
+  large: 20px,
+  xlarge: 20px,
+);
+
+$hero-headline-sizes:(
+  null: 16px,
+  small: 24px,
+  medium: 24px,
+  large: 40px,
+  xlarge: 40px,
+);
+
+$tile-hero-headline:(
+  null: 18px,
+  small: 18px,
+  medium: 18px,
+  large: 18px,
+  xlarge: 18px,
+);
+
+$tile-card-headline:(
+  null: 18px,
+  small: 16px,
+  medium: 18px,
+  large: 18px,
+  xlarge: 18px,
+);
+
+$tile-first-headline:(
+  small: 18px,
+  medium: 18px,
+  large: 18px,
+  xlarge: 18px,
+  xxlarge: 18px,
+);
+
+$tile-first-headline-fantasy:(
+  small: 16px,
+  medium: 16px,
+  large: 18px,
+  xlarge: 18px,
+  xxlarge: 18px,
+);
+
+$tile-card-category:(
+  null: 12px,
+  small: 11px,
+  medium: 12px,
+  large: 12px,
+  xlarge: 12px,
+);
+
+$category-size:(
+  null: 15px,
+  small: 15px,
+  medium: 15px,
+  large: 15px,
+  xlarge: 15px,
+);
+
+$featured-headline-sizes:(
+  small: 20px,
+  medium: 20px,
+  large: 20px,
+  xlarge: 20px,
+  xxlarge: 26px,
+);
+
+$byline-lg-size:(
+  small: 18px,
+  medium: 18px,
+  large: 18px,
+  xlarge: 18px,
+  xxlarge: 18px,
+);
+
+$byline-sm-size:(
+  small: 12px,
+  medium: 16px,
+  large: 16px,
+  xlarge: 16px,
+  xxlarge: 16px,
+);
+
+$featured-drop-size:(
+  small: 20px,
+  medium: 20px,
+  large: 20px,
+  xlarge: 20px,
+  xxlarge: 20px,
+);
+
+$twitter-font-sizes: (
+  null: 15px,
+  small: 15px,
+  medium: 15px,
+  large: 15px,
+  xlarge: 15px,
+);
+
+$weekend-tile-font-sizes: (
+  null: 16px,
+  small: 16px,
+  medium: 16px,
+  large: 16px,
+  xlarge: 16px,
+);
+
+
+
+
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0; padding: 0;
+  font-weight: normal ;
+}
+h1, h2, h3 {
+  @include proxima-nova();
+}
+h1 {
+  color: $white;
+  @include font-size($h1-font-sizes);
+}
+%h3 {
+  color: $fd-article-green;
+  @include font-size($section-headline-sizes);
+  margin-bottom: 20px;
+}
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4{
+  font-size: 16px;
+  @include proxima-nova-bold();
+}
+p, small, .subhead-1, .subhead-2, .fdl-promo {
+  @include proxima-nova();
+}
+p {
+  @include font-size($p-font-sizes);
+  @include rm(line-height, 27/16rem);
+  &:last-child { margin-bottom: 0 }
+}
+small {
+  color: $fd-dark-gray;
+  @include rm(font-size, 16/16rem);
+  @include rm(line-height, 21/16rem);
+}
+
+strong { font-weight: 600; }
+
+a {
+  color: $fd-blue;
+  font-size: 18px;
+  text-decoration: underline;
+  font-size: inherit;
+  @include proxima-nova();
+  a:hover{
+    color: $fd-blue;
+  }
+}
+
+/*
+  ## List Reset ##
+*/
+ul {
+  -webkit-margin-before: 0 ;
+  -webkit-margin-after: 0 ;
+  -webkit-margin-start: 0px ;
+  -webkit-margin-end: 0px ;
+  -webkit-padding-start: 0 ;
+}
+hr {
+  margin: 0;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "selectivizr-1.0.3",
+  "_cacheHeaders": {
+    "ETag": "\"7077c578f12a6bbded1903c7739cace0c2f9809b\"",
+    "Content-Length": "18987",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:7077c578f",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/keithclark/selectivizr/master/selectivizr.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/keithclark/selectivizr/master/selectivizr.js"
+}

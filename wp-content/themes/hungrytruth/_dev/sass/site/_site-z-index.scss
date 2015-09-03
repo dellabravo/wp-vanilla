@@ -1,0 +1,16 @@
+// z-index map
+$z-index: (
+	mobile-nav: 300,
+	mobile-footer: 250,
+	social-navigation: 200,
+	navigation: 100,
+	header-footer: 90,	
+);
+
+@function z-index($key){
+	@return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+	z-index: z-index($key);
+}

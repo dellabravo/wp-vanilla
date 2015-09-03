@@ -1,0 +1,13 @@
+{
+  "name": "angular-truncate",
+  "_cacheHeaders": {
+    "ETag": "\"da77562783ab1928d3079c03cadf2606f09b6f22\"",
+    "Content-Length": "1760",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:da7756278",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/sparkalow/angular-truncate/master/src/truncate.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/sparkalow/angular-truncate/master/src/truncate.js"
+}

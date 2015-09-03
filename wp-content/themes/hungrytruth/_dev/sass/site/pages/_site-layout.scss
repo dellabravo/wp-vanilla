@@ -1,0 +1,90 @@
+/* fdl-layout */
+#main{
+	position: relative;
+	overflow: hidden;
+	background: $main-bg;
+}
+
+.inner-content{
+	margin-left: 15px;
+	padding: 30px 30px 30px;
+
+	@include md-down { 
+		width: 100%;
+		margin: 0;
+	}
+
+	@include sm-down{
+		margin: 0;
+		padding: 15px;
+
+		h2,h3{
+			text-align: center;
+		}
+	}
+}
+
+#primary{
+	width: auto;
+	margin-right: 342px;
+	@include md-down { 
+		width: 100%;
+		margin: 0;
+	}
+
+	&.full-width{
+		width: 100%;
+	}
+}
+
+
+.sidebar{
+	width: 342px;
+	height: 100%;
+	@include md-down { 
+		display: none;
+	}
+	@include sm-down{
+		display: none;
+	}
+
+
+	background: $fd-sidebar-green;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	h3{
+  		@include proxima-nova();
+		@include font-size($section-headline-sizes);
+	}
+
+	&.locked{
+		position: fixed;
+		top:0;
+	}
+}
+
+.media{
+	a{
+	    display: block;
+	    position: relative;
+	}
+}
+
+@mixin fdl-container {
+	@include container-fixed();
+	@media(min-width: $screen-lg-min) {
+		width: $fdl-page-width;
+	}
+	@include lg-down { width: 100% }
+}
+
+
+.featured_event{
+	img{
+		width: 100%;
+	}
+}
+
+img.unveil { opacity: 0; transition: opacity .7s ease-in; }

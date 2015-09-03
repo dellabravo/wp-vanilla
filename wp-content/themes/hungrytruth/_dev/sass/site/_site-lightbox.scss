@@ -1,0 +1,158 @@
+// my overlay
+.black_overlay{
+	display: none;
+	position:fixed;
+	_position:absolute;
+	top:0;
+	_top:expression(eval(document.body.scrollTop));
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	@include opacity(0.8);
+}
+.white_content {
+	&.content-mailchimp {
+		@include sm-up {
+			height: 55%;	
+		}
+	}
+	display: none;
+	position: fixed;
+	
+	width: 90%;
+	left: 5%;
+	@include sm-up {
+		width: 80%;
+		left: 10%;
+		height: 70%;	
+		top: 15%;
+	}
+	@include md-up {
+		width: 50%;
+		left: 25%;
+	}
+
+	top: 5%;
+	height: 90%;
+	padding: 25px 25px 0;
+	background: $primary;
+	z-index:1002;
+	overflow: auto;
+	padding: 25px 25px 0;
+	color: $white;
+}
+.close-myoverlay {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	right: 0;
+	color: darken($primary, 25);
+	line-height: 25px;
+	width: 25px;
+	cursor: pointer;
+	text-align: center;
+	font: Arial, sans-serif;
+	@include background-color($white, 0.3);
+	&:hover {
+		color: darken($primary, 15);
+	}
+}
+// feather
+.featherlight {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+	background: #333;
+	background: rgba(0, 0, 0, 0)
+}
+.featherlight:last-of-type {
+	background: rgba(0, 0, 0, .8)
+}
+.featherlight:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -.25em
+}
+
+.featherlight-inner {
+	display: block
+}
+
+.featherlight-close-icon {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	right: 0;
+	line-height: 25px;
+	width: 25px;
+	cursor: pointer;
+	text-align: center;
+	font: Arial, sans-serif;
+	background: #fff;
+	background: rgba(255, 255, 255, .3);
+	color: $white;
+}
+
+.featherlight-image {
+	width: 100%
+}
+
+.featherlight-iframe .featherlight-content {
+	border-bottom: 0;
+	padding: 0
+}
+
+.featherlight iframe {
+	border: 0
+}
+
+.featherlight-content {
+	position: relative;
+	text-align: left;
+	vertical-align: middle;
+	display: inline-block;
+	overflow: auto;
+	padding: 25px 25px 0;
+	border-bottom: 25px solid transparent;
+	min-width: 30%;
+	margin-left: 5%;
+	margin-right: 5%;
+	max-height: 95%;
+	background: $primary;
+	cursor: auto;
+	white-space: normal;
+	min-height: 400px;
+	color: $white;
+}
+.featherlight-content, .white_content {
+	[type="submit"] {
+		@extend .fdl-btn-inv-wide;
+		background-color: $white;
+		color: $primary;
+		&:hover {
+			background-color: $primary;
+			color: $white;
+		}
+	}
+	input[type="text"], input[type="email"], textarea  {
+		border-radius: 0;
+		background-color: $primary-50;
+		border: 1px solid $primary-50;
+		color: $white;
+		padding: 15px;
+	}
+	h2 {
+		color: $white;
+		margin-bottom: 10px;
+	}
+}

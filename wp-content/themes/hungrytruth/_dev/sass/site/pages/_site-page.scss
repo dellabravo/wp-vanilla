@@ -1,0 +1,18 @@
+.page{
+
+	h1{
+		color: $fd-sidebar-green-dark;
+	}
+
+	#content{
+		.inner-content{
+			min-height: 2000px;
+		}
+
+		.fd-footer{
+			.inner-content{
+				min-height: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,164 @@
+/*
+	# Framework related reusable components #
+*/
+
+/* ## Nested Grid ##
+
+Very versatile for creating two-level deep nested grids.
+ */
+
+.nested, .nested-inner { @include make-row(); }
+.nested {
+// reset browser defaults if there is no css-reset is loaded.
+// this will prob change in the next version.
+	list-style-type: none;
+  > li {
+    // @include make-sm-column(4);  /* provided by the caller */
+    margin-bottom: $grid-gutter-width * 2;
+    &:last-child { margin-bottom: 0 }
+
+  }
+}
+.nested-inner {
+  > li:first-child { 
+  	// @include make-sm-column(6); /* provided by the caller */
+    }
+  > li:last-child{ 
+  	// @include make-sm-column(6) /* provided by the caller */
+   }
+}
+
+/* 
+### Nested Grid Usage ###
+
+<ul class="nested">
+	<li>
+		<ul class="nested-inner">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<ul class="nested-inner">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<ul class="nested-inner">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+
+### Nested Grid Example ###
+	html:
+	<div class="executive-team">
+		<h1>Executive Team</h1>
+		<ul class="execteam-list">
+			<li>
+				<ul class="execteam-bio">
+					<li>
+						<img src="../img/block2.png" alt="">
+					</li>
+					<li>
+						<h2>Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, quas!</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="execteam-bio">
+					<li>
+						<img src="../img/block2.png" alt="">
+					</li>
+					<li>
+						<h2>Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, ullam.</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="execteam-bio">
+					<li>
+						<img src="../img/block2.png" alt="">
+					</li>
+					<li>
+						<h2>Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, minus.</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="execteam-bio">
+					<li>
+						<img src="../img/block2.png" alt="">
+					</li>
+					<li>
+						<h2>Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, magnam!</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="execteam-bio">
+					<li>
+						<img src="../img/block2.png" alt="">
+					</li>
+					<li>
+						<h2>Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, magnam!</p>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="execteam-bio">
+					<li>
+						<img src="../img/block2.png" alt="">
+					</li>
+					<li>
+						<h2>Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, magnam!</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	scss:
+	
+	// executive team
+	.executive-team {
+	  > h1 { margin-bottom: 15px; }
+	}
+	.execteam-list{
+	  @extend .nested;
+	  > h1 { text-align: left; margin-bottom: 15px }
+	  > li {
+	    @include make-xs-column(12); @include make-md-column(6); @include make-lg-column(4);
+	  }
+	}
+	.execteam-bio {
+	    @extend .nested-inner;
+	    > li:first-child {@include make-sm-column(3); @include make-lg-column(5)}
+	    > li:last-child {@include make-sm-column(9);  @include make-lg-column(7)}
+	    > li > p { background-color: #e5e6e7 }
+	    > li > img { @media(max-width: $screen-xs-max) {display: none} }
+	    h2 { font-size: 18px }
+	}
+
+*/
+
+/* ## inline list ## */
+// % is a placeholder so we dont get the class compiled.
+%list-inline {
+	li {
+		display: inline;
+	}
+}
+
+

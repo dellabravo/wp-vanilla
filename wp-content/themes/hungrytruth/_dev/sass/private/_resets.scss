@@ -1,0 +1,8 @@
+// lists
+ul, ol {
+	list-style-type: none;
+}
+// grid
+* {
+	@include box-sizing(border-box);
+}
