@@ -11,7 +11,7 @@ get_header(); ?>
 				<div class="article-inner">
 						<section class="error-404 not-found text-center">
 							<header class="page-header">
-								<h1 class="page-title"><?php _e( 'Page not Found', 'fanduel' ); ?></h1>
+								<h1 class="page-title"><?php _e( 'Page not Found', 'hungrytruth' ); ?></h1>
 							</header><!-- .page-header -->
 
 							<div class="page-content mt70 clearfix">

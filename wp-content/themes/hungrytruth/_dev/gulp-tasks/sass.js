@@ -71,7 +71,7 @@ gulp.task('sass-build', function () {
 
 gulp.task('critical', ['sass-dev'], function() {  
 
-  var cssUrl = config.browserSync.proxy + '/wp-content/themes/fanduel/style.css';
+  var cssUrl = config.browserSync.proxy + '/wp-content/themes/hungrytruth/style.css';
   var cssPath = path.join( tmpDir, 'style.css' );
   var includePath = path.join( config.global.assetRoot, '/inc/critical.css.php' );
   request(cssUrl).pipe(fs.createWriteStream(cssPath)).on('close', function() {

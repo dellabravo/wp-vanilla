@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: fanduel Page
+* Template Name: Page
 */
 ?>
 

@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
   <link rel="shortcut icon" href="<?php echo site_url(); ?>/wp-content/uploads/2015/08/FDfavicon.ico" />
-  <title>FanDuel</title>  
+  <title>Hungry Truth</title>  
  
   <?php wp_head(); ?>
 
@@ -26,7 +26,6 @@
         <div id="topbar">
           <div class="container">
             <h1 class='logo pull-left'><a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>hungrytruth Insider</a></h1>
-            <span class="sm-up pull-right v-align"><a class="play-now btn" target="_blank" href="https://www.fanduel.com/games" class="pull-right">Play Now</a></span>
             <a class="mobile-nav-btn ht-stack sm-down"><span>Menu</span></a>
           </div>
         </div>
@@ -41,7 +40,6 @@
             </div>
             <nav>
               <div class="navigation pull-left">
-                <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => false, 'menu_id' => 'ht-mininav-expand', 'menu_class' => "ht-main-nav", 'walker' => new FanDuel_Mega_Walker() ) ); ?>          
               </div>
               <div class="secondary-nav">
                 <div class="search pull-left">
