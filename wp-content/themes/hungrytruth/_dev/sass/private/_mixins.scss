@@ -1,0 +1,152 @@
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+// @mixin clearfix() {
+//   &:before,
+//   &:after {
+//     content: " "; // 1
+//     display: table; // 2
+//   }
+//   &:after {
+//     clear: both;
+//   }
+// }
+
+// http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best
+@mixin clearfix() {
+	overflow: hidden;
+	display: inline-block; /* Necessary to trigger "hasLayout" in IE */
+	display: block; /* Sets element back to block */
+}
+
+@mixin modern-clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Responsive utilities
+
+//
+// More easily include all the states for responsive-utilities.less.
+// [converter] $parent hack
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block !important;
+  }
+  table#{$parent}  { display: table; }
+  tr#{$parent}     { display: table-row !important; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell !important; }
+}
+
+// [converter] $parent hack
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}
+
+// strip unit
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Rem units
+// eg: .box { @include rm(padding, 0, 10/16rem) }
+@mixin set-rem($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
+
+// alias for set-rem
+@mixin rm($args...) {
+  @include set-rem($args...);
+}
+
+// background color with transparency
+@mixin background-color($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
+
+// media query helpers
+@mixin sm-down() {
+  @media(max-width: $screen-xs-max) {
+    @content;
+  }
+}
+@mixin sm-up() {
+  @media(min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+@mixin md-up() {
+  @media(min-width: $screen-md-min) {
+    @content;
+  }
+}
+@mixin md-down() {
+  @media(max-width: $screen-sm-max) {
+    @content;
+  }
+}
+@mixin lg-down() {
+  @media(max-width: $screen-md-max) {
+    @content;
+  }
+}
+// opacity
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+// inline block
+@mixin inline-block {
+  display: -moz-inline-stack; // ff 2
+  display: inline-block;
+  zoom:1; *display: inline; _height: 15px; // ie 6-7
+}

@@ -1,0 +1,45 @@
+// Reusable classes
+.text-center { text-align: center }
+.clearfix { @include clearfix; }
+.pull-left { float: left; }
+.pull-right { float: right; }
+.upcase { text-transform: uppercase  }
+.dn {display: none}
+.list-inline { > li { display: inline } }
+.inv { color: $white }
+.fix-float { @include fix-float() }
+.blk-bg { background-color: $black }
+.mt40 { @include rm(margin-top, 40/16rem) }
+.mb40 { @include rm(margin-bottom, 40/16rem) }
+.mt70 { @include rm(margin-top, 70/16rem) }
+.article-adjust { @include article-adjust }
+.sr-only{display: none;}
+.hidden{display: none;}
+.v-align{@include vertical-align();}
+.justify{
+	text-align: justify;	
+	text-align-last: justify;
+	&:after{
+	  content: '';
+	  display: inline-block;
+	  width: 100%;
+	}
+}
+
+.mobile { 
+	@include md-down { display: block !important; }
+	@include md-up { display: none !important; }
+}
+.desktop { 
+	@include md-up { display: block !important; }
+	@include md-down { display: none !important; }
+}
+.sm-up { 
+	@include sm-up { display: block !important; }
+	@include sm-down { display: none !important; }
+}
+.sm-down { 
+	@include sm-up { display: none !important; }
+	@include sm-down { display: block !important; }
+}
+

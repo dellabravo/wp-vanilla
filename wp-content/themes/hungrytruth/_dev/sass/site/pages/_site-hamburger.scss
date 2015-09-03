@@ -1,0 +1,68 @@
+// Hamburger Menu
+
+/* -----------------------------------------------------------------------------
+
+  HAMBURGER ICONS COMPONENT
+  
+----------------------------------------------------------------------------- */
+
+// vars
+
+$button-width: 60px;                    // The width of the button area
+$button-height: 63px;                   // The height of the button area
+$bar-thickness: 2px;                    // The thickness of the button bars
+$button-pad: 18px;                      // The left/right padding between button area and bars.
+$button-bar-space: 5px;                // The spacing between button bars
+
+.fd-stack {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: $button-width;
+  height: $button-height;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+}
+
+.fd-stack:focus {
+  outline: none;
+}
+
+.fd-stack span {
+  display: block;
+  position: absolute;
+  top: ($button-height / 2) - ($bar-thickness / 2);
+  left: $button-pad;
+  right: $button-pad;
+  height: $bar-thickness;
+  background: $fd-green;
+}
+
+.fd-stack span::before,
+.fd-stack span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: $bar-thickness;
+  background-color: $fd-green;
+  content: "";
+}
+
+.fd-stack span::before {
+  top: -$bar-thickness - $button-bar-space;
+}
+
+.fd-stack span::after {
+  bottom: -$bar-thickness - $button-bar-space;
+}
+

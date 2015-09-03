@@ -1,0 +1,78 @@
+/* ## Buttons ## */
+$animation-duration : 100ms;
+$animation-type : linear;
+$btn-primary: #000;
+$white: #fff;
+%hd-btn-states {
+	&:hover {
+		transition: background-color $animation-duration $animation-type;
+		border: 3px solid darken($btn-primary, 5%);
+		background-color: $btn-primary;
+		color: $white;
+	}
+	&:active {
+		background-color: $white;
+		color: $btn-primary;
+		border: 3px solid $btn-primary;
+	}
+}
+.hd-btn {
+	text-decoration: none;
+	text-transform: none;
+	transition: background-color $animation-duration $animation-type;
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	font-weight: 500;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	@include user-select(none);
+	border: 1px solid transparent;
+	border: 3px solid $btn-primary;
+	white-space: nowrap;
+	@include rm(font-size, 15/16rem);
+	padding: 10px 15px;
+	letter-spacing: 1px;
+	@extend %hd-btn-states;
+}
+.hd-btn-sm {
+	@extend .hd-btn;
+	@extend %hd-btn-states;
+	@include rm(font-size, 13/16rem);
+	padding: 6px 10px;
+	letter-spacing: 1px;
+}
+
+.hd-btn-md {
+	@extend .hd-btn;
+	@extend %hd-btn-states;
+	@include rm(font-size, 16/16rem);
+	padding: 14px 19px;
+	letter-spacing: 1px;
+}
+.hd-btn-sm.hd-btn-wide,
+.hd-btn.hd-btn-wide,
+.hd-btn-md.hd-btn-wide
+{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.hd-btn-lg.hd-btn-wide {
+	padding-left: 50px;
+	padding-right: 50px;	
+}
+
+.hd-btn-lg {
+	@extend .hd-btn;
+	@extend %hd-btn-states;
+	@include rm(font-size, 18/16rem);
+	padding: 21px 25px;
+	letter-spacing: 1px;
+  text-decoration: none;
+}
+
+button:disabled {
+  @include opacity(0.5);
+  cursor: auto;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "fanduel-dependencies",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    " <>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11",
+    "underscore": "~1.7.0",
+    "angular": "1.2.16",
+    "angular-smoothscroll": "~1.1.1",
+    "html5shiv": "~3.7.2",
+    "respond": "~1.4.2",
+    "selectivizr-1.0.3": "https://raw.githubusercontent.com/keithclark/selectivizr/master/selectivizr.js",
+    "angular-truncate": "https://raw.githubusercontent.com/sparkalow/angular-truncate/master/src/truncate.js",
+    "imagesloaded": "~3.1.8",
+    "jquery-cookie": "~1.4.1"
+  }
+}
