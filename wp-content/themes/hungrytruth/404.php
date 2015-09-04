@@ -16,7 +16,7 @@ get_header(); ?>
 
 							<div class="page-content mt70 clearfix">
 								<p><img src="<?php bloginfo('template_url') ?>/images/404-small.gif" alt="404" /></p>
-								<p><a href="<?php echo home_url() ?>" class="more"><?php _e( 'Return to the homepage', 'fanduel' ); ?></a></p>
+								<p><a href="<?php echo home_url() ?>" class="more"><?php _e( 'Return to the homepage', 'hungrytruth' ); ?></a></p>
 							</div><!-- .page-content -->
 						</section><!-- .error-404 -->
 					</div>														
